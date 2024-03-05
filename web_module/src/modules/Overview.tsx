@@ -97,6 +97,7 @@ const Drawer = styled(MuiDrawer, {
   ...(open && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme),
+    whiteSpace: "wrap",
   }),
   ...(!open && {
     ...closedMixin(theme),
@@ -158,7 +159,10 @@ export default function Overview() {
         <List>
           {[
             { text: "What is This Project?", icon: <InfoIcon /> },
-            { text: "What is Protein Folding?", icon: <CoronavirusIcon /> },
+            {
+              text: `What is Protein Folding?`,
+              icon: <CoronavirusIcon />,
+            },
             { text: "Why Learn About Protein Folding?", icon: <BiotechIcon /> },
             {
               text: "What is Quantum Computing?",
