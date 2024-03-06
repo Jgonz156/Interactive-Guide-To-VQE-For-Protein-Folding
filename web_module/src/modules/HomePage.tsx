@@ -1,11 +1,10 @@
 import { Box } from "@mui/material"
-//import ChatBox from '../components/ChatBox'
-import MiniDrawer from "../components/NavigationDrawer"
+import Module from "../components/Module"
 
 const HomePage = () => {
   return (
     <>
-      <MiniDrawer />
+      <Module />
     </>
   )
 }

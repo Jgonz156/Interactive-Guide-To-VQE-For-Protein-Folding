@@ -18,19 +18,6 @@ import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
 
 import InfoIcon from "@mui/icons-material/Info"
-import BiotechIcon from "@mui/icons-material/Biotech"
-import CoronavirusIcon from "@mui/icons-material/Coronavirus"
-import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard"
-import LocalShippingIcon from "@mui/icons-material/LocalShipping"
-import TerminalIcon from "@mui/icons-material/Terminal"
-
-import { WTP } from "./overviewSubModules/wtp"
-import { WPF } from "./overviewSubModules/wpf"
-import { WLAPF } from "./overviewSubModules/wlapf"
-import { AF2 } from "./overviewSubModules/af2"
-import { WAQIC } from "./overviewSubModules/waqic"
-import { WQC } from "./overviewSubModules/wqc"
-import Module from "../components/Module"
 
 const drawerWidth = 260
 
@@ -107,11 +94,26 @@ const Drawer = styled(MuiDrawer, {
   }),
 }))
 
-export default function Overview() {
-  /*
+export default function Module({
+  title = "DefaultModule",
+  subModules = [
+    {
+      text: "default",
+      icon: <InfoIcon />,
+      component: <Typography>DefaultSubModule</Typography>,
+    },
+  ],
+  activities = [
+    {
+      text: "defaultActivity",
+      icon: <InfoIcon />,
+      component: <Typography>DefaultActivity</Typography>,
+    },
+  ],
+}) {
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
-  const [subModule, setSubModule] = React.useState("What is This Project?")
+  const [subModule, setSubModule] = React.useState(subModules[0].component)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -121,8 +123,8 @@ export default function Overview() {
     setOpen(false)
   }
 
-  const handleSubModuleChange = (name: string) => {
-    setSubModule(name)
+  const handleSubModuleChange = (component) => {
+    setSubModule(component)
   }
 
   return (
@@ -143,7 +145,7 @@ export default function Overview() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Guide Overview
+            {title}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -159,25 +161,10 @@ export default function Overview() {
         </DrawerHeader>
         <Divider />
         <List>
-          {[
-            { text: "What is This Project?", icon: <InfoIcon /> },
-            {
-              text: `What is Protein Folding?`,
-              icon: <CoronavirusIcon />,
-            },
-            { text: "Why Learn About Protein Folding?", icon: <BiotechIcon /> },
-            {
-              text: "What is Quantum Computing?",
-              icon: <DeveloperBoardIcon />,
-            },
-            {
-              text: "Why Apply Quantum Instead of Classical?",
-              icon: <LocalShippingIcon />,
-            },
-          ].map(({ text, icon }, index) => (
+          {subModules.map(({ text, icon, component }, index) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
-                onClick={() => handleSubModuleChange(text)}
+                onClick={() => handleSubModuleChange(component)}
                 sx={{
                   minHeight: 96,
                   justifyContent: open ? "initial" : "center",
@@ -209,89 +196,35 @@ export default function Overview() {
         </List>
         <Divider />
         <List>
-          {[{ text: "Alpha Fold 2", icon: <TerminalIcon /> }].map(
-            ({ text, icon }, index) => (
-              <ListItem key={text} disablePadding sx={{ display: "block" }}>
-                <ListItemButton
-                  onClick={() => handleSubModuleChange(text)}
+          {activities.map(({ text, icon, component }, index) => (
+            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+              <ListItemButton
+                onClick={() => handleSubModuleChange(component)}
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
                   sx={{
-                    minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
-                    px: 2.5,
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
                   }}
                 >
-                  <ListItemIcon
-                    sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : "auto",
-                      justifyContent: "center",
-                    }}
-                  >
-                    {icon}
-                  </ListItemIcon>
-                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                </ListItemButton>
-              </ListItem>
-            )
-          )}
+                  {icon}
+                </ListItemIcon>
+                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </ListItem>
+          ))}
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        {subModule === "What is This Project?" ? (
-          <WTP />
-        ) : subModule === "What is Protein Folding?" ? (
-          <WPF />
-        ) : subModule === "Why Learn About Protein Folding?" ? (
-          <WLAPF />
-        ) : subModule === "What is Quantum Computing?" ? (
-          <WQC />
-        ) : subModule === "Why Apply Quantum Instead of Classical?" ? (
-          <WAQIC />
-        ) : subModule === "Alpha Fold 2" ? (
-          <AF2 />
-        ) : (
-          "bob"
-        )}
+        {subModule}
       </Box>
     </Box>
-  )
-  */
-  return (
-    <>
-      <Module
-        title="Guide Overview"
-        subModules={[
-          {
-            text: "What is This Project?",
-            icon: <InfoIcon />,
-            component: <WTP />,
-          },
-          {
-            text: `What is Protein Folding?`,
-            icon: <CoronavirusIcon />,
-            component: <WPF />,
-          },
-          {
-            text: "Why Learn About Protein Folding?",
-            icon: <BiotechIcon />,
-            component: <WLAPF />,
-          },
-          {
-            text: "What is Quantum Computing?",
-            icon: <DeveloperBoardIcon />,
-            component: <WQC />,
-          },
-          {
-            text: "Why Apply Quantum Instead of Classical?",
-            icon: <LocalShippingIcon />,
-            component: <WAQIC />,
-          },
-        ]}
-        activities={[
-          { text: "Alpha Fold 2", icon: <TerminalIcon />, component: <AF2 /> },
-        ]}
-      />
-    </>
   )
 }
