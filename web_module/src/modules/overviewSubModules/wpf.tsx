@@ -1,6 +1,6 @@
 import { Box, Paper, Typography } from "@mui/material"
 import { ProteinChain } from "../../components/ProteinChain"
-import { Padding } from "@mui/icons-material"
+import { Orator } from "../../components/Orator"
 
 export function WPF() {
   return (
@@ -11,7 +11,7 @@ export function WPF() {
         gap: 3,
       }}
     >
-      <Paper elevation={3}>
+      <Orator>
         Before attempting to dive right into algorithms and analysis of the
         protein folding problem it is best to get a brief understanding of what
         proteins are and what they do to motivate a solution. It begins in the
@@ -22,10 +22,10 @@ export function WPF() {
         synthesis to occur. This synthesis occurs at an organelle called the
         ribosome, where mRNA guides the linking together of amnio acids into
         long chains. This multi-node linkage is called a polypeptide chain or as
-        we know them a protein.{" "}
-      </Paper>
+        we know them a protein.
+      </Orator>
       <ProteinChain />
-      <Paper elevation={3}>
+      <Orator>
         Proteins are best understood to be molecular machines. They are
         constructed in our cells to perform varying tasks. There are only 20
         different amino acids that these chains are constructed with and yet
@@ -35,7 +35,7 @@ export function WPF() {
         combinations. They take the appearance of a singly linked list data
         structure. These chains then fold into a three-dimensional structure
         that allows them to accomplish some task(s) within a cell.
-      </Paper>
+      </Orator>
     </Box>
   )
 }
