@@ -18,6 +18,7 @@ import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
 
 import InfoIcon from "@mui/icons-material/Info"
+import NavigationButton from "./NavigationButton"
 
 const drawerWidth = 260
 
@@ -147,6 +148,7 @@ export default function Module({
           <Typography variant="h6" noWrap component="div">
             {title}
           </Typography>
+          <NavigationButton />
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

@@ -1,12 +1,17 @@
-import { Box } from "@mui/material"
-import Module from "../components/Module"
+import { IconButton, Typography } from "@mui/material"
+import NavigationButton from "../components/NavigationButton"
 
-const HomePage = () => {
+export default function HomePage() {
   return (
     <>
-      <Module />
+      <Typography>
+        Please use the following Icon on each page to navigate.
+      </Typography>
+      <NavigationButton />
+      <Typography>
+        It brings up the navigation dialog which is responsible for bringing you
+        to each of the modules in this app!
+      </Typography>
     </>
   )
 }
-
-export default HomePage
