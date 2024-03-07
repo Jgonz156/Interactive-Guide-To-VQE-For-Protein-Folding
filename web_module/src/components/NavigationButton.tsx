@@ -19,29 +19,28 @@ import Typography from "@mui/material/Typography"
 import { blue } from "@mui/material/colors"
 
 const modules = [
-  { title: "AllTogether", slug: "/all-together" },
-  { title: "FoldingProblem", slug: "/folding-problem" },
-  { title: "HomePage", slug: "/" },
-  { title: "Overview", slug: "/overview" },
-  { title: "QuantumCircuitry", slug: "/quantum-circuitry" },
-  { title: "VariationalMethods", slug: "/variational-methods" },
+  { title: "Home Page", slug: "/" },
+  { title: "1. Guide Overview", slug: "/overview" },
+  { title: "2. The Folding Problem", slug: "/folding-problem" },
+  { title: "3. Quantum Circuitry", slug: "/quantum-circuitry" },
+  { title: "4. Variational Methods", slug: "/variational-methods" },
+  { title: "5. All Together", slug: "/all-together" },
 ]
 
 export interface SimpleDialogProps {
   open: boolean
-  selectedValue: string
-  onClose: (value: string) => void
+  onClose: () => void
 }
 
 function SimpleDialog(props: SimpleDialogProps) {
-  const { onClose, selectedValue, open } = props
+  const { onClose, open } = props
 
   const handleClose = () => {
-    onClose(selectedValue)
+    onClose()
   }
 
   const handleListItemClick = (value: string) => {
-    onClose(value)
+    onClose()
   }
 
   return (
@@ -71,28 +70,22 @@ function SimpleDialog(props: SimpleDialogProps) {
 
 export default function NavigationButton() {
   const [open, setOpen] = React.useState(false)
-  const [selectedValue, setSelectedValue] = React.useState(modules[1])
+  //const [selectedValue, setSelectedValue] = React.useState(modules[1])
 
   const handleClickOpen = () => {
     setOpen(true)
   }
 
-  const handleClose = (value: string) => {
+  const handleClose = () => {
     setOpen(false)
-    console.log(value)
-    setSelectedValue(value)
   }
 
   return (
     <>
       <IconButton onClick={handleClickOpen}>
-        <NavigationIcon />
+        <NavigationIcon sx={{ color: "white" }} />
       </IconButton>
-      <SimpleDialog
-        selectedValue={selectedValue}
-        open={open}
-        onClose={handleClose}
-      />
+      <SimpleDialog open={open} onClose={handleClose} />
     </>
   )
 }

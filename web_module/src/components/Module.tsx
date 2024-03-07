@@ -124,7 +124,7 @@ export default function Module({
     setOpen(false)
   }
 
-  const handleSubModuleChange = (component) => {
+  const handleSubModuleChange = (component: JSX.Element) => {
     setSubModule(component)
   }
 
@@ -145,7 +145,7 @@ export default function Module({
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             {title}
           </Typography>
           <NavigationButton />
@@ -223,9 +223,27 @@ export default function Module({
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        {subModule}
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          m: 0,
+          p: 0,
+          width: "100vw",
+          minHeight: "100vh",
+          //position: "sticky",
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "/VQE-site-background.jpg"
+          })`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <Box sx={{ flexGrow: 1, p: 3 }}>
+          <DrawerHeader />
+          {subModule}
+        </Box>
       </Box>
     </Box>
   )
