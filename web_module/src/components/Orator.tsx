@@ -3,21 +3,32 @@ import {
   AccordionDetails,
   AccordionSummary,
   Divider,
+  SxProps,
   Typography,
 } from "@mui/material"
 import Paper from "@mui/material/Paper"
+import { ReactNode } from "react"
 
 export function Orator({
   title = "",
   expanding = false,
-  children = "",
+  children,
   sx = {},
+  titleTextAlign = "left",
+}: {
+  title?: string
+  expanding?: boolean
+  children?: ReactNode
+  sx?: SxProps
+  titleTextAlign?: "left" | "right" | "center"
 }) {
   return title ? (
     expanding ? (
       <>
-        <Accordion elevation={3}>
-          <AccordionSummary>
+        <Accordion elevation={3} sx={{ ...sx }}>
+          <AccordionSummary
+            sx={{ display: "flex", justifyContent: titleTextAlign }}
+          >
             <Typography variant="h6">{title}</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -37,7 +48,7 @@ export function Orator({
     )
   ) : expanding ? (
     <>
-      <Accordion elevation={3}>
+      <Accordion elevation={3} sx={{ ...sx }}>
         <AccordionSummary></AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1">{children}</Typography>
