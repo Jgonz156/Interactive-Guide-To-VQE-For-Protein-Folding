@@ -54,7 +54,16 @@ export function WQC() {
           clearly a bit lower or higher than one of the temperature lines, but
           the actual number can’t be given due to accuracy issues.
         </Orator>
-        <Photograph />
+        <Photograph
+          link={process.env.PUBLIC_URL + "/VQE-mercury-thermometer.jpg"}
+          footerInfo={{
+            owner: "Ivan Radic",
+            imgName:
+              "Mercury thermometer on a cup of tea. Riding out Coronavirus at home",
+            imgLink: "https://flic.kr/p/2kJXYHt",
+            license: "BY",
+          }}
+        />
         <Orator>
           As a small aside, this is why significant digits and calculated errors
           are so important in science fields, since preforming experiments is
@@ -95,7 +104,7 @@ export function WQC() {
           like a classical bit’s value can. To help make this a bit clearer we
           will use the example of a mouse in a maze trying to get some cheese.
         </Orator>
-        <Presenter link={process.env.PUBLIC_URL + "/VQE-site-background.jpg"} />
+        <Photograph />
         <Orator>
           Let’s say there are multiple paths that lead to different piles of
           cheese. Analogous to a classical circuit, if our maze had a glass roof

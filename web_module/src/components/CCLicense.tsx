@@ -16,7 +16,10 @@ export function CCLicense({ license = "0" }: { license?: CCLicenseTypes }) {
           : `https://creativecommons.org/licenses/${license.toLowerCase()}/4.0/`
       }
     >
-      <img src={`${process.env.PUBLIC_URL}/CC-${license}.png`} />
+      <img
+        src={`${process.env.PUBLIC_URL}/CC-${license}.png`}
+        style={{ height: "33px" }}
+      />
     </a>
   )
 }
