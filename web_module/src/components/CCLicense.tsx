@@ -1,8 +1,13 @@
-export function CCLicense({
-  license = "0",
-}: {
-  license?: "0" | "BY-NC-ND" | "BY-ND" | "BY-NC-SA" | "BY-NC" | "BY-SA" | "BY"
-}) {
+export type CCLicenseTypes =
+  | "0"
+  | "BY-NC-ND"
+  | "BY-ND"
+  | "BY-NC-SA"
+  | "BY-NC"
+  | "BY-SA"
+  | "BY"
+
+export function CCLicense({ license = "0" }: { license?: CCLicenseTypes }) {
   return (
     <a
       href={

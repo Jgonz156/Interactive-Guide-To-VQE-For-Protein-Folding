@@ -1,11 +1,11 @@
 import { Image } from "@mui/icons-material"
 import { Box, Chip, Divider, Paper, SxProps, Typography } from "@mui/material"
 import { ReactElement } from "react"
-import { CCLicense } from "./CCLicense"
+import { CCLicense, CCLicenseTypes } from "./CCLicense"
 
 export interface CCInfo {
   owner: string
-  license: string
+  license: CCLicenseTypes
   imgLink: string
   imgName: string
 }
