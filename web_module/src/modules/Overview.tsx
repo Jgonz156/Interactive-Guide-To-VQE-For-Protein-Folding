@@ -58,11 +58,11 @@ export default function Overview() {
             icon: <DeveloperBoardIcon />,
             component: <WQC />,
           },
-          {
-            text: "Why Apply Quantum Instead of Classical?",
-            icon: <LocalShippingIcon />,
-            component: <WAQIC />,
-          },
+          //{
+          //  text: "Why Apply Quantum Instead of Classical?",
+          //  icon: <LocalShippingIcon />,
+          //  component: <WAQIC />,
+          //},
         ]}
         activities={[
           { text: "Alpha Fold 2", icon: <TerminalIcon />, component: <AF2 /> },

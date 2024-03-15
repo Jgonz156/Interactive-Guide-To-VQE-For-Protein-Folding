@@ -81,7 +81,7 @@ export function Photograph({
                 background: "white",
               }}
             >
-              Original Image Information{" "}
+              Original Image Information
               {selected ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
             </ToggleButton>
           </Box>
