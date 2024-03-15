@@ -104,7 +104,15 @@ export function WQC() {
           like a classical bit’s value can. To help make this a bit clearer we
           will use the example of a mouse in a maze trying to get some cheese.
         </Orator>
-        <Photograph />
+        <Photograph
+          link={process.env.PUBLIC_URL + "/VQE-mouse-maze.jpg"}
+          footerInfo={{
+            owner: "HelveticaFanatic",
+            imgLink: "https://flic.kr/p/53ShDA",
+            imgName: "Shannon's mouse",
+            license: "BY-SA",
+          }}
+        />
         <Orator>
           Let’s say there are multiple paths that lead to different piles of
           cheese. Analogous to a classical circuit, if our maze had a glass roof

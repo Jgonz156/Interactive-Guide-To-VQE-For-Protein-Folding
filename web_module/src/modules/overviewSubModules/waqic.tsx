@@ -12,18 +12,6 @@ export function WAQIC() {
         }}
       >
         <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
-        <Orator>WAQIC</Orator>
       </Box>
     </>
   )

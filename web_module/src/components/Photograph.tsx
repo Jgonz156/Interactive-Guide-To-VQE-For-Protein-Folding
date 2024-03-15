@@ -30,7 +30,7 @@ export function Photograph({
 }) {
   return (
     <>
-      <Paper elevation={3} sx={{ ...sx, paddingBottom: 2 }}>
+      <Paper elevation={3} sx={{ ...sx }}>
         <img
           src={link}
           alt={alt}
@@ -59,19 +59,27 @@ export function Photograph({
           sx={{
             display: "flex",
             flexDirection: "horizontal",
-            padding: 2,
             gap: 2,
           }}
         >
-          <Typography>{imgName}</Typography>
+          <Typography sx={{ padding: 2 }}>{imgName}</Typography>
           <Divider orientation="vertical" flexItem sx={{ flexGrow: 1 }} />
-          <Typography>{owner}</Typography>
+          <Typography sx={{ padding: 2 }}>{owner}</Typography>
           <Divider orientation="vertical" flexItem sx={{ flexGrow: 1 }} />
-          <Typography>URL: {imgLink}</Typography>
-          <Divider orientation="vertical" flexItem sx={{ flexGrow: 1 }} />
-          <Typography>
-            <CCLicense license={license} />
-          </Typography>
+          <Typography sx={{ padding: 2 }}>URL: {imgLink}</Typography>
+
+          <Box sx={{ marginTop: "-14px" }}>
+            <CCLicense
+              license={license}
+              sx={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                position: "relative",
+                zIndex: 1,
+              }}
+            />
+          </Box>
         </Box>
         {children ? (
           <>

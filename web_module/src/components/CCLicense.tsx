@@ -7,9 +7,16 @@ export type CCLicenseTypes =
   | "BY-SA"
   | "BY"
 
-export function CCLicense({ license = "0" }: { license?: CCLicenseTypes }) {
+export function CCLicense({
+  license = "0",
+  sx,
+}: {
+  license?: CCLicenseTypes
+  sx?: any
+}) {
   return (
     <a
+      style={{ borderBottomRightRadius: 4, ...sx }}
       href={
         license === "0"
           ? "https://creativecommons.org/publicdomain/zero/1.0/"
@@ -18,7 +25,7 @@ export function CCLicense({ license = "0" }: { license?: CCLicenseTypes }) {
     >
       <img
         src={`${process.env.PUBLIC_URL}/CC-${license}.png`}
-        style={{ height: "33px" }}
+        style={{ borderBottomRightRadius: 4, ...sx }}
       />
     </a>
   )
