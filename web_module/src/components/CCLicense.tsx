@@ -16,7 +16,7 @@ export function CCLicense({
 }) {
   return (
     <a
-      style={{ borderBottomRightRadius: 4, ...sx }}
+      //style={{ borderBottomRightRadius: 4, ...sx }}
       href={
         license === "0"
           ? "https://creativecommons.org/publicdomain/zero/1.0/"

@@ -58,6 +58,7 @@ export function WQC() {
           link={process.env.PUBLIC_URL + "/VQE-mercury-thermometer.jpg"}
           footerInfo={{
             owner: "Ivan Radic",
+            ownerLink: "https://www.flickr.com/people/26344495@N05/",
             imgName:
               "Mercury thermometer on a cup of tea. Riding out Coronavirus at home",
             imgLink: "https://flic.kr/p/2kJXYHt",

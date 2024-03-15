@@ -1,10 +1,24 @@
 import { Image } from "@mui/icons-material"
-import { Box, Chip, Divider, Paper, SxProps, Typography } from "@mui/material"
+import {
+  Box,
+  Button,
+  Chip,
+  Divider,
+  Link,
+  Paper,
+  SxProps,
+  ToggleButton,
+  Typography,
+} from "@mui/material"
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp"
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import { ReactElement } from "react"
 import { CCLicense, CCLicenseTypes } from "./CCLicense"
+import React from "react"
 
 export interface CCInfo {
   owner: string
+  ownerLink?: string
   license: CCLicenseTypes
   imgLink: string
   imgName: string
@@ -14,7 +28,7 @@ export function Photograph({
   children,
   sx,
   link = process.env.PUBLIC_URL + "/VQE-no-image-found.jpg",
-  footerInfo: { owner, license, imgLink, imgName } = {
+  footerInfo: { owner, license, imgLink, imgName, ownerLink } = {
     owner: "Bob",
     license: "0",
     imgLink: "No link Found",
@@ -28,6 +42,7 @@ export function Photograph({
   footerInfo?: CCInfo
   alt?: string
 }) {
+  const [selected, setSelected] = React.useState(false)
   return (
     <>
       <Paper elevation={3} sx={{ ...sx }}>
@@ -40,47 +55,76 @@ export function Photograph({
             objectFit: "cover",
             borderTopLeftRadius: 4,
             borderTopRightRadius: 4,
-            marginBottom: "-25px",
+            marginBottom: selected ? "-30px" : "-55px",
             position: "relative",
             zIndex: 1,
           }}
         />
         <Divider textAlign="left">
-          <Chip
-            label="Original Image Information"
+          <Box
             sx={{
               position: "relative",
               zIndex: 2,
-              backgroundColor: "#E0E0E0",
+              background: "white",
+              borderRadius: 1,
             }}
-          />
-        </Divider>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "horizontal",
-            gap: 2,
-          }}
-        >
-          <Typography sx={{ padding: 2 }}>{imgName}</Typography>
-          <Divider orientation="vertical" flexItem sx={{ flexGrow: 1 }} />
-          <Typography sx={{ padding: 2 }}>{owner}</Typography>
-          <Divider orientation="vertical" flexItem sx={{ flexGrow: 1 }} />
-          <Typography sx={{ padding: 2 }}>URL: {imgLink}</Typography>
-
-          <Box sx={{ marginTop: "-14px" }}>
-            <CCLicense
-              license={license}
-              sx={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                position: "relative",
-                zIndex: 1,
+          >
+            <ToggleButton
+              value="check"
+              selected={selected}
+              onChange={() => {
+                setSelected(!selected)
               }}
-            />
+              sx={{
+                position: "relative",
+                zIndex: 2,
+                background: "white",
+              }}
+            >
+              Original Image Information{" "}
+              {selected ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
+            </ToggleButton>
           </Box>
-        </Box>
+        </Divider>
+        {selected ? (
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "horizontal",
+              gap: 2,
+            }}
+          >
+            <Typography sx={{ padding: 2, flexGrow: 4 }}>
+              <Link href={imgLink} underline="always">
+                {imgName}
+              </Link>
+            </Typography>
+            <Divider orientation="vertical" flexItem />
+            <Typography sx={{ padding: 2, flexGrow: 4 }}>
+              {ownerLink ? (
+                <Link href={ownerLink} underline="always">
+                  {owner}
+                </Link>
+              ) : (
+                owner
+              )}
+            </Typography>
+            <Box sx={{ marginTop: "-25px", flexGrow: 1, height: "82px" }}>
+              <CCLicense
+                license={license}
+                sx={{
+                  height: "100%",
+                  width: "100%",
+                  //objectFit: "cover",
+                  position: "relative",
+                  zIndex: 1,
+                }}
+              />
+            </Box>
+          </Box>
+        ) : (
+          <></>
+        )}
         {children ? (
           <>
             <Divider />
