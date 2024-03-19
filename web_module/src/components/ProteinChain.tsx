@@ -182,24 +182,37 @@ export function ProteinChain() {
     "PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASK"
   )
 
+  const [incorrectCode, setincorrectCode] = React.useState(false)
+
   const [moreDataLessData, setData] = React.useState(false)
 
   const handleSetData = () => {
     moreDataLessData ? setData(false) : setData(true)
   }
 
-  const nodes = amino.split("").map((olc, i) =>
-    moreDataLessData
-      ? {
-          id: i,
-          label: `${AMINOACIDDATA[olc].name}
+  const VALIDOLC = "ACDEFGHIKLMNOQRSTVWY".split("")
+
+  const nodes = amino
+    .split("")
+    //.filter((olc) => {
+    //  let alert = olc in VALIDOLC
+    //  if (!alert) {
+    //    setincorrectCode(true)
+    //  }
+    //  return alert
+    // })
+    .map((olc, i) =>
+      moreDataLessData
+        ? {
+            id: i,
+            label: `${AMINOACIDDATA[olc].name}
     ${AMINOACIDDATA[olc].molecularWeight} moles
     ${AMINOACIDDATA[olc].molecularFormula}`,
-          shape: "diamond",
-          color: "#7BE141",
-        }
-      : { id: i, label: olc, color: "#7BE141" }
-  )
+            shape: "diamond",
+            color: "#7BE141",
+          }
+        : { id: i, label: olc, color: "#7BE141" }
+    )
 
   const edges = nodes
     .map((n, i, a) =>
@@ -279,11 +292,13 @@ export function ProteinChain() {
       >
         <Box sx={{ padding: 2, display: "flex" }}>
           <TextField
+            error={true}
             id="outlined-basic"
             label="Amino Acid Sequence (One Letter Code)"
             variant="outlined"
             fullWidth
             onChange={(e) => setAminoAcidChain(e.target.value)}
+            //helperText="Please only enter valid OLC's"
           />
           <ToggleButtonGroup
             value={moreDataLessData}
