@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-import { IconButton } from "@mui/material"
+import { IconButton, SxProps } from "@mui/material"
 import NavigationIcon from "@mui/icons-material/Navigation"
 
 import * as React from "react"
@@ -68,9 +68,8 @@ function SimpleDialog(props: SimpleDialogProps) {
   )
 }
 
-export default function NavigationButton() {
+export default function NavigationButton({ sx }: { sx?: SxProps }) {
   const [open, setOpen] = React.useState(false)
-  //const [selectedValue, setSelectedValue] = React.useState(modules[1])
 
   const handleClickOpen = () => {
     setOpen(true)
@@ -83,7 +82,7 @@ export default function NavigationButton() {
   return (
     <>
       <IconButton onClick={handleClickOpen}>
-        <NavigationIcon sx={{ color: "white" }} />
+        <NavigationIcon sx={{ color: "white", ...sx }} />
       </IconButton>
       <SimpleDialog open={open} onClose={handleClose} />
     </>

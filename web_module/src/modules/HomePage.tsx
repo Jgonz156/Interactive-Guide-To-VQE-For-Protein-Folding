@@ -18,6 +18,7 @@ export default function HomePage() {
           flexGrow: 1,
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
           m: 0,
           p: 5,
           gap: 4,
@@ -43,21 +44,13 @@ export default function HomePage() {
             Julian Gonzalez
           </Typography>
         </Orator>
-        <Orator
-          expanding
-          title="Expand To Begin"
-          titleTextAlign="center"
-          sx={{ width: "45%" }}
-        >
-          <Typography variant="body1">
-            Below is the navigation icon! It will pop up a dialog box to help
-            you navigate the site!
-          </Typography>
-          <Box sx={{ backgroundColor: "blue", width: "5.5%" }}>
-            <NavigationButton />
-          </Box>
-          <Typography variant="body1">
-            Use it to explore the modules within this app!
+        <Box>
+          <NavigationButton sx={{ width: "50vw", height: "50vh" }} />
+        </Box>
+        <Orator sx={{ width: "40%" }}>
+          <Typography textAlign="center">
+            Above is the navigation icon. Use it to navigate to any of the pages
+            of this app. Click it now to begin!
           </Typography>
         </Orator>
       </Box>
