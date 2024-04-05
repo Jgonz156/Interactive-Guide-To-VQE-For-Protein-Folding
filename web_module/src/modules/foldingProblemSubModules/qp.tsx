@@ -12,7 +12,14 @@ export function QP() {
           gap: 3,
         }}
       >
-        <Orator></Orator>
+        <Orator>
+          <Link
+            href="https://arxiv.org/ftp/arxiv/papers/1811/1811.11538.pdf"
+            underline="hover"
+          >
+            Fantatsic Paper on Explaining QUBO's
+          </Link>
+        </Orator>
       </Box>
     </>
   )
