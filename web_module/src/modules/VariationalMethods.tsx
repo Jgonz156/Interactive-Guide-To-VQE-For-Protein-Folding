@@ -4,7 +4,7 @@ import { Q } from "./variationalMethodsSubModules/q"
 import { CA } from "./variationalMethodsSubModules/ca"
 import { C } from "./variationalMethodsSubModules/c"
 import { V } from "./variationalMethodsSubModules/v"
-import { WTC } from "./variationalMethodsSubModules/wtc"
+import { WAT } from "./variationalMethodsSubModules/wat"
 
 export default function VariationalMethods() {
   return (
@@ -13,9 +13,9 @@ export default function VariationalMethods() {
         title="Variational Methods"
         subModules={[
           {
-            text: "Which to Choose?",
+            text: "What are they?",
             icon: <DescriptionIcon />,
-            component: <WTC />,
+            component: <WAT />,
           },
           {
             text: `VQE`,
