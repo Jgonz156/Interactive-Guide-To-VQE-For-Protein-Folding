@@ -292,7 +292,7 @@ export function ProteinChain() {
       >
         <Box sx={{ padding: 2, display: "flex" }}>
           <TextField
-            error={true}
+            error={false}
             id="outlined-basic"
             label="Amino Acid Sequence (One Letter Code)"
             variant="outlined"
