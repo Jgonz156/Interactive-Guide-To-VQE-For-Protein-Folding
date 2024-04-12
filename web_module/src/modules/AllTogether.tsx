@@ -1,5 +1,7 @@
 import Module from "../components/Module"
-import DescriptionIcon from "@mui/icons-material/Description"
+import EmojiNatureIcon from "@mui/icons-material/EmojiNature"
+import AirlineSeatFlatAngledIcon from "@mui/icons-material/AirlineSeatFlatAngled"
+import TerminalIcon from "@mui/icons-material/Terminal"
 import { CV } from "./allTogetherSubModules/cv"
 import { QPF } from "./allTogetherSubModules/qpf"
 import { VFP } from "./allTogetherSubModules/vfp"
@@ -12,19 +14,19 @@ export default function AllTogether() {
         subModules={[
           {
             text: "VQE for PF",
-            icon: <DescriptionIcon />,
+            icon: <EmojiNatureIcon />,
             component: <VFP />,
           },
           {
             text: "CVaR VQE",
-            icon: <DescriptionIcon />,
+            icon: <AirlineSeatFlatAngledIcon />,
             component: <CV />,
           },
         ]}
         activities={[
           {
             text: "Qiskit: Protein Folding",
-            icon: <DescriptionIcon />,
+            icon: <TerminalIcon />,
             component: <QPF />,
           },
         ]}

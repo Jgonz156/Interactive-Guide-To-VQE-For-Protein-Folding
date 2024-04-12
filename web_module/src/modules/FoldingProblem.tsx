@@ -5,6 +5,10 @@ import { LP } from "./foldingProblemSubModules/lp"
 import { QP } from "./foldingProblemSubModules/qp"
 import { IP } from "./foldingProblemSubModules/ip"
 import DescriptionIcon from "@mui/icons-material/Description"
+import ShapeLineIcon from "@mui/icons-material/ShapeLine"
+import CodeIcon from "@mui/icons-material/Code"
+import WaterfallChartIcon from "@mui/icons-material/WaterfallChart"
+import TerminalIcon from "@mui/icons-material/Terminal"
 
 export default function FoldingProblem() {
   return (
@@ -19,24 +23,24 @@ export default function FoldingProblem() {
           },
           {
             text: "Classical Approaches",
-            icon: <DescriptionIcon />,
+            icon: <ShapeLineIcon />,
             component: <CA />,
           },
           {
             text: "Encoding Protein Folding",
-            icon: <DescriptionIcon />,
+            icon: <CodeIcon />,
             component: <EPF />,
           },
           {
             text: "QUBO Problems",
-            icon: <DescriptionIcon />,
+            icon: <WaterfallChartIcon />,
             component: <QP />,
           },
         ]}
         activities={[
           {
             text: "PyQUBO",
-            icon: <DescriptionIcon />,
+            icon: <TerminalIcon />,
             component: <IP />,
           },
         ]}

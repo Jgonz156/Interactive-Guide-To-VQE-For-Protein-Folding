@@ -1,5 +1,9 @@
 import Module from "../components/Module"
-import DescriptionIcon from "@mui/icons-material/Description"
+import QuestionMarkIcon from "@mui/icons-material/QuestionMark"
+import ScienceIcon from "@mui/icons-material/Science"
+import NetworkPingIcon from "@mui/icons-material/NetworkPing"
+import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard"
+import TerminalIcon from "@mui/icons-material/Terminal"
 import { Q } from "./variationalMethodsSubModules/q"
 import { CA } from "./variationalMethodsSubModules/ca"
 import { C } from "./variationalMethodsSubModules/c"
@@ -14,29 +18,29 @@ export default function VariationalMethods() {
         subModules={[
           {
             text: "What are they?",
-            icon: <DescriptionIcon />,
+            icon: <QuestionMarkIcon />,
             component: <WAT />,
           },
           {
             text: `VQE`,
-            icon: <DescriptionIcon />,
+            icon: <ScienceIcon />,
             component: <V />,
           },
           {
             text: "CVaR",
-            icon: <DescriptionIcon />,
+            icon: <NetworkPingIcon />,
             component: <C />,
           },
           {
             text: "Circuit Ansatz",
-            icon: <DescriptionIcon />,
+            icon: <DeveloperBoardIcon />,
             component: <CA />,
           },
         ]}
         activities={[
           {
             text: "Qiskit",
-            icon: <DescriptionIcon />,
+            icon: <TerminalIcon />,
             component: <Q />,
           },
         ]}

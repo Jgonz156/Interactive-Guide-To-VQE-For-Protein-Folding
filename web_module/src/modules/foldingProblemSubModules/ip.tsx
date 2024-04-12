@@ -12,7 +12,14 @@ export function IP() {
           gap: 3,
         }}
       >
-        <Orator></Orator>
+        <Orator>
+          <Link
+            href="https://colab.research.google.com/drive/1q7ZKmw8xxqG3t3IWJXHtR3azliFoB55g?usp=sharing"
+            underline="hover"
+          >
+            PyQUBO Colabratory Notebook Covering MVC!
+          </Link>
+        </Orator>
       </Box>
     </>
   )

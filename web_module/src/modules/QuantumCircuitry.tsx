@@ -1,5 +1,6 @@
 import Module from "../components/Module"
 import DescriptionIcon from "@mui/icons-material/Description"
+import TerminalIcon from "@mui/icons-material/Terminal"
 import { CC } from "./quantumCircuitSubModules/cc"
 import { E } from "./quantumCircuitSubModules/e"
 import { QA } from "./quantumCircuitSubModules/qa"
@@ -36,7 +37,7 @@ export default function QuantumCircuitry() {
         activities={[
           {
             text: "Quirk: Quantum Circuit Simulator",
-            icon: <DescriptionIcon />,
+            icon: <TerminalIcon />,
             component: <QCS />,
           },
         ]}
