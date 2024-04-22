@@ -31,11 +31,11 @@ export default function VariationalMethods() {
             icon: <NetworkPingIcon />,
             component: <C />,
           },
-          {
-            text: "Circuit Ansatz",
-            icon: <DeveloperBoardIcon />,
-            component: <CA />,
-          },
+          //{
+          //  text: "Circuit Ansatz",
+          //  icon: <DeveloperBoardIcon />,
+          //  component: <CA />,
+          //},
         ]}
         activities={[
           {
