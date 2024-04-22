@@ -26,23 +26,23 @@ import CompressIcon from "@mui/icons-material/Compress"
 
 const modules = [
   { title: "Home Page", slug: "/", icon: <HomeIcon /> },
-  { title: "1. Guide Overview", slug: "/overview", icon: <ListAltIcon /> },
+  { title: "Guide Overview", slug: "/overview", icon: <ListAltIcon /> },
   {
-    title: "2. The Folding Problem",
+    title: "The Folding Problem",
     slug: "/folding-problem",
     icon: <AutoStoriesIcon />,
   },
+  //{
+  //  title: "Quantum Circuitry",
+  //  slug: "/quantum-circuitry",
+  //  icon: <DashboardIcon />,
+  //},
   {
-    title: "3. Quantum Circuitry",
-    slug: "/quantum-circuitry",
-    icon: <DashboardIcon />,
-  },
-  {
-    title: "4. Variational Methods",
+    title: "Variational Methods",
     slug: "/variational-methods",
     icon: <AltRouteIcon />,
   },
-  { title: "5. All Together", slug: "/all-together", icon: <CompressIcon /> },
+  { title: "All Together", slug: "/all-together", icon: <CompressIcon /> },
 ]
 
 export interface SimpleDialogProps {
