@@ -14,35 +14,33 @@ import Module from "../components/Module"
 
 export default function Overview() {
   return (
-    <>
-      <Module
-        title="Guide Overview"
-        subModules={[
-          {
-            text: "What is This Project?",
-            icon: <InfoIcon />,
-            component: <WTP />,
-          },
-          {
-            text: `What is Protein Folding?`,
-            icon: <CoronavirusIcon />,
-            component: <WPF />,
-          },
-          {
-            text: "Why Learn About Protein Folding?",
-            icon: <BiotechIcon />,
-            component: <WLAPF />,
-          },
-          {
-            text: "What is Quantum Computing?",
-            icon: <DeveloperBoardIcon />,
-            component: <WQC />,
-          },
-        ]}
-        activities={[
-          { text: "Alpha Fold 2", icon: <TerminalIcon />, component: <AF2 /> },
-        ]}
-      />
-    </>
+    <Module
+      title="Guide Overview"
+      subModules={[
+        {
+          text: "What is This Project?",
+          icon: <InfoIcon />,
+          component: <WTP />,
+        },
+        {
+          text: `What is Protein Folding?`,
+          icon: <CoronavirusIcon />,
+          component: <WPF />,
+        },
+        {
+          text: "Why Learn About Protein Folding?",
+          icon: <BiotechIcon />,
+          component: <WLAPF />,
+        },
+        {
+          text: "What is Quantum Computing?",
+          icon: <DeveloperBoardIcon />,
+          component: <WQC />,
+        },
+      ]}
+      activities={[
+        { text: "Alpha Fold 2", icon: <TerminalIcon />, component: <AF2 /> },
+      ]}
+    />
   )
 }

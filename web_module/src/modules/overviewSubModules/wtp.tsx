@@ -40,13 +40,13 @@ export function WTP() {
           This portion of the guide ends with another Collab notebook on the
           QUBO solving python library, PyQUBO.
         </Orator>
-        <Orator>
+        {/*<Orator>
           Then, the guide will introduce quantum circuitry. It will cover a
           review of classical circuits, what quantum superpositions are, qubit
           entanglement, and quantum advantage. This portion ends with a small
           walkthrough on making quantum circuits with the online, browser-based
           simulator Quirk.
-        </Orator>
+        </Orator>*/}
         <Orator>
           Following that, the guide will cover quantum variational methods. By
           walking through what they are, VQE in depth, what the CVaR

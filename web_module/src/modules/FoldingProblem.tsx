@@ -12,39 +12,37 @@ import TerminalIcon from "@mui/icons-material/Terminal"
 
 export default function FoldingProblem() {
   return (
-    <>
-      <Module
-        title="The Protein Folding Problem"
-        subModules={[
-          {
-            text: "Levinthal's Paradox",
-            icon: <DescriptionIcon />,
-            component: <LP />,
-          },
-          {
-            text: "Classical Approaches",
-            icon: <ShapeLineIcon />,
-            component: <CA />,
-          },
-          {
-            text: "Encoding Protein Folding",
-            icon: <CodeIcon />,
-            component: <EPF />,
-          },
-          {
-            text: "QUBO Problems",
-            icon: <WaterfallChartIcon />,
-            component: <QP />,
-          },
-        ]}
-        activities={[
-          {
-            text: "PyQUBO",
-            icon: <TerminalIcon />,
-            component: <IP />,
-          },
-        ]}
-      />
-    </>
+    <Module
+      title="The Protein Folding Problem"
+      subModules={[
+        {
+          text: "Levinthal's Paradox",
+          icon: <DescriptionIcon />,
+          component: <LP />,
+        },
+        {
+          text: "Classical Approaches",
+          icon: <ShapeLineIcon />,
+          component: <CA />,
+        },
+        {
+          text: "Encoding Protein Folding",
+          icon: <CodeIcon />,
+          component: <EPF />,
+        },
+        {
+          text: "QUBO Problems",
+          icon: <WaterfallChartIcon />,
+          component: <QP />,
+        },
+      ]}
+      activities={[
+        {
+          text: "PyQUBO",
+          icon: <TerminalIcon />,
+          component: <IP />,
+        },
+      ]}
+    />
   )
 }

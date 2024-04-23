@@ -23,6 +23,7 @@ import AutoStoriesIcon from "@mui/icons-material/AutoStories"
 import DashboardIcon from "@mui/icons-material/Dashboard"
 import AltRouteIcon from "@mui/icons-material/AltRoute"
 import CompressIcon from "@mui/icons-material/Compress"
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet"
 
 const modules = [
   { title: "Home Page", slug: "/", icon: <HomeIcon /> },
@@ -43,6 +44,7 @@ const modules = [
     icon: <AltRouteIcon />,
   },
   { title: "All Together", slug: "/all-together", icon: <CompressIcon /> },
+  { title: "Sources", slug: "/sources", icon: <AccountBalanceWalletIcon /> },
 ]
 
 export interface SimpleDialogProps {

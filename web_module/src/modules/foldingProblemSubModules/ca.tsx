@@ -88,7 +88,7 @@ export function CA() {
           such a limitation and instead rely on our knowledge on molecular
           forces.
         </Orator>
-        <Orator>(Talk about Force Fields methods)</Orator>
+        {/* <Orator>(Talk about Force Fields methods)</Orator> */}
         <Orator>
           This approach, however, is computationally expensive for other reasons
           than search spaces. Many small forces acting many times per second
@@ -101,9 +101,9 @@ export function CA() {
           getting caught in local minima energy states that don’t allow for the
           full conformation to be realized.
         </Orator>
-        <Orator>(Talk about Monte Carlo Methods)</Orator>
+        {/*<Orator>(Talk about Monte Carlo Methods)</Orator>
         <Orator>(Talk about Statical Mechanics models)</Orator>
-        <Orator>(Mention the best classical methods work in tandem)</Orator>
+      <Orator>(Mention the best classical methods work in tandem)</Orator>*/}
       </Box>
     </>
   )

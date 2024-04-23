@@ -67,7 +67,7 @@ export function EPF() {
           directly modeling the folding as part of the computations. However,
           this granularity means our solution space is quite large for longer
           proteins as the number of possible turns to keep track of increases.
-          (TRY TO MAKE MENTION OF THE COMPLEXITY OF HOW THIS SCALES O(N^4)).
+          {/* (TRY TO MAKE MENTION OF THE COMPLEXITY OF HOW THIS SCALES O(N^4)). */}
           Another issue is that research has shown that proteins do not just use
           information from node to node to fold in this way, and instead can
           involve long range interactions from non-neighboring nodes which this
@@ -128,7 +128,7 @@ export function EPF() {
           makes it tricky to represent more “positional” node interactions like
           hydrogen bonding and the subsequent hydrophobic collapse.
         </Orator>
-        <Orator>(Talk about contact-based encoding)</Orator>
+        {/* <Orator>(Talk about contact-based encoding)</Orator> */}
       </Box>
     </>
   )
