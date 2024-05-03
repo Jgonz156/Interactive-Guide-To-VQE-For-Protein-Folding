@@ -12,12 +12,7 @@ export default function AllTogether() {
       title="Putting it All Together"
       subModules={[
         {
-          text: "VQE for PF",
-          icon: <EmojiNatureIcon />,
-          component: <VFP />,
-        },
-        {
-          text: "CVaR VQE",
+          text: "CVaR VQE for Protein Folding",
           icon: <AirlineSeatFlatAngledIcon />,
           component: <CV />,
         },
